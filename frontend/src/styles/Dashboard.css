@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212121;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #212121;
+}
+
+.history-container {
+  width: 250px;
+  background-color: #2f2f30;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-radius: 5px;
+  transform: translateX(-100%); /* Start hidden off-screen */
+  transition: transform 0.3s ease-out; /* Smooth transition effect */
+}
+
+.history-container.open {
+  transform: translateX(0);
+}
+
+.close-btn {
+  font-size: large;
+  background-color: #2f2f30;
+  border-radius: 30px;
+  border: none;
+  color: #f9f8f8;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+}
+.close-btn:hover{
+  color: red;
+  transform: scale(1.35);
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+  transition: margin-left 0.5s ease-out;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px solid;
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 1000;
+}
+
+.chat-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  overflow-y: scroll; /* Ensures scrolling is available */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;
+  margin-bottom: 100px;
+}
+
+.app-container.history-open .chat-container {
+  margin-left: 260px;
+}
+
+.chatbot-header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-left: 10px;
+  padding-bottom:25px ;
+  margin-bottom: 35px;
+  background-color: #212121;
+  color: white;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+}
+.chatbot-header h1{
+  position: absolute;
+  font-size: 28px;
+  left:60px;
+  top: 0px;
+  margin-left: auto;
+  padding-left: auto;
+}
+
+.bot-title{
+  font-family:"Merienda", cursive;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.hamburger {
+  font-size: 24px;
+  position: absolute;
+  left: 15px;
+  top:15px;
+  background-color: #424242;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.hamburger:hover{
+  background-color: #bdbcbc;
+  animation: rotation 0.7s forwards;
+}
+@keyframes rotation {
+  from {
+     transform: rotate(0deg);
+  }
+  to {
+     transform: rotate(180deg);
+  }
+}
+
+.close-btn{
+  left: 15px;
+  top:20px;
+}
+
+.messages {
+  padding: 20px;
+  background-color:#212121;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align messages to the right */
+  position: relative;
+  margin-left: auto;
+  margin-bottom: 10px;
+  right:25%;
+  height: auto;
+}
+
+.message-input-container {
+  padding: 10px;
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+
+}
+
+.message-input-container input[type="text"] {
+  flex: 1;
+  padding: 15px;
+  padding-left: 40px;
+  background-color: #272727;
+  color: white;
+  border-radius: 30px;
+  outline: none;
+  max-width: 100%;
+  margin-left: auto;
+}
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 1px;
+  position: fixed;
+  bottom: 40px;
+}
+.icon:hover{
+  transform: scale(1.35);
+  color: #fafefe;
+}
+.user-icon{
+  border: none;
+  height:35px;
+  width: 35px;
+  border-radius: 70px;
+  background-color: #dddada;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  margin-right: auto;
+}
+.user-icon:hover{
+  box-shadow: rgba(161, 159, 159, 0.4) 0px 0px 0px 2px, rgba(113, 113, 114, 0.65) 0px 4px 6px -1px, rgba(160, 158, 158, 0.08) 0px 1px 0px inset;  
+  transform: scale(1.3);
+  background-color: #faf9f9;
+}
+
+
+.uploaded-image {
+  max-width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+

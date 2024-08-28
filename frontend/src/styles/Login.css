@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+body{
+  margin: 0px;
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #5c076d, #87bfe9);
+    background-size: 100% 100%;
+    font-family: Calibri;
+
+  }
+ 
+  
+  .login-card {
+    background-color: rgba(255, 255, 255, 0.45);
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .login-card h2 {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #181818;
+  }
+  #h2{
+    font-size: 26px;
+    margin-left: 37%;
+  }
+  #create{
+    font-size:14px ;
+    margin-left: 30%;
+    opacity: 0.5;
+    }
+  
+  .form-group {
+    display: grid;
+    grid-template-columns: 150px 80px 270px;
+    margin-bottom: 20px;
+    height: 40.364px;
+    margin-left: 20%;
+    align-items: center;
+  }
+  
+
+  
+  .form-input {
+    width: 260px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .btn-submit {
+    background-color: #5f0286;
+    width: 280px;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 90px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .btn-submit:hover {
+    background-color: #b300ff;
+  }
+
+  .error-message {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 14px;
+    animation: fadeIn 0.5s ease, shake 0.5s ease;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Shake animation */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+  }
+  

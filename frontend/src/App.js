@@ -1,21 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AuthForm from './components/AuthForm';
-import OtpVerificationPage from './pages/OtpVerificationPage';
-import './styles/main.css'; // Import your CSS file
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Dashboard from './pages/Dashboard';
+import NotFound from './pages/NotFound';
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<AuthForm isSignup={true} />} />
-          <Route path="/login" element={<AuthForm isSignup={false} />} />
-          <Route path="/otp-verification" element={<OtpVerificationPage />} />
-        </Routes>
-      </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
     </Router>
   );
-};
+}
 
-export default App; // Ensure this line is present
+export default App;

@@ -1,52 +1,37 @@
 import React, { useState } from 'react';
-import { loginUser, registerUser } from '../api/authService';
 
-const AuthForm = ({ isSignup, onSuccess }) => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
+const AuthForm = ({ onSubmit, title }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      if (isSignup) {
-        console.log(formData)
-        await registerUser(formData);
-        // Redirect to OTP verification page or show success message
-        onSuccess();
-      } else {
-        await loginUser(formData);
-        // Handle login success
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    onSubmit({ email, password });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      {isSignup && (
+      {title === 'Signup' && (
         <div>
-          <label>Username</label>
-          <input type="text" name="username" value={formData.username} onChange={handleChange} />
+          <label>Email</label>
+          <input 
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
-      )}
-      <div>
-        <label>Email</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} />
-      </div>
+      )}   
       <div>
         <label>Password</label>
-        <input type="password" name="password" value={formData.password} onChange={handleChange} />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
       </div>
-      <button type="submit">{isSignup ? 'Sign Up' : 'Login'}</button>
+      <button type="submit">{title}</button>
     </form>
   );
 };
