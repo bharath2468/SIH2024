@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ChatSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    message: { type: String, required: true },  // User's text message
+    message: { type: String, required: true, default: '' },  // User's text message
     image: {
         data: Buffer,      // Binary data for storing the image
         contentType: String // Content type of the image (e.g., 'image/jpeg')

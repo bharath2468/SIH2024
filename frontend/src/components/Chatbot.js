@@ -13,7 +13,6 @@ function Chatbot({ onSendMessage }) {
       onSendMessage({ type: 'text', content: message });
       setMessage('');
     }
-
 };
 
   const handleFileChange = (event) => {
